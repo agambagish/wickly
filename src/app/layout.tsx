@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 
+import { ClerkProvider } from "@clerk/nextjs";
+
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
@@ -14,13 +16,15 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: React.PropsWithChildren) {
   return (
-    <html lang="en">
-      <body
-        className={cn("antialiased", font.className)}
-        suppressHydrationWarning
-      >
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={cn("antialiased", font.className)}
+          suppressHydrationWarning
+        >
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
