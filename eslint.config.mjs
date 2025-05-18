@@ -13,7 +13,7 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript", "prettier"),
   ...compat.plugins("check-file", "n"),
   ...compat.config({
-    ignorePatterns: ["src/components/ui/*"],
+    ignorePatterns: ["src/components/ui/*", ".pnpm-store/*"],
     rules: {
       semi: ["error"],
       quotes: ["error", "double"],
