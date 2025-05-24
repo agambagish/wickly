@@ -11,7 +11,7 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript", "prettier"),
-  ...compat.plugins("check-file", "n"),
+  ...compat.plugins("check-file", "n", "import"),
   ...compat.config({
     ignorePatterns: ["src/components/ui/*", ".pnpm-store/*", "drizzle/*"],
     rules: {
@@ -56,6 +56,18 @@ const eslintConfig = [
           destructuredArrayIgnorePattern: "^_",
           varsIgnorePattern: "^_",
           ignoreRestSiblings: true,
+        },
+      ],
+      "import/no-restricted-paths": [
+        "error",
+        {
+          zones: [
+            {
+              target: "./src/modules/layouts",
+              from: "./src/modules",
+              except: ["./layouts"],
+            },
+          ],
         },
       ],
     },
