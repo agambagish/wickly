@@ -67,6 +67,11 @@ const eslintConfig = [
               from: "./src/modules",
               except: ["./layouts"],
             },
+            {
+              target: "./src/modules/home",
+              from: "./src/modules",
+              except: ["./home"],
+            },
           ],
         },
       ],

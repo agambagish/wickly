@@ -32,7 +32,7 @@ import {
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { name: "Dashboard", href: "/dashboard", authRequired: true },
+  { name: "Trading", href: "/t", authRequired: true },
   { name: "Markets", href: "/markets", authRequired: true },
   { name: "Wallet", href: "/wallet", authRequired: true },
   { name: "How It Works", href: "/how-it-works", authRequired: false },
